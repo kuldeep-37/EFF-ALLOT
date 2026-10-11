@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-darker text-slate-200 font-sans antialiased;
+    background-image: radial-gradient(circle at top right, rgba(99, 102, 241, 0.15), transparent 40%),
+                      radial-gradient(circle at bottom left, rgba(59, 130, 246, 0.15), transparent 40%);
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-slate-900/50 backdrop-blur-xl border border-slate-800/50 shadow-2xl;
+  }
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-medium shadow-lg hover:shadow-primary/25 transition-all duration-300 transform hover:-translate-y-0.5;
+  }
+  .btn-danger {
+    @apply bg-gradient-to-r from-rose-500 to-rose-600 text-white px-6 py-3 rounded-full font-medium shadow-lg hover:shadow-rose-500/25 transition-all duration-300 transform hover:-translate-y-0.5;
+  }
+  .input-field {
+    @apply w-full bg-slate-950/50 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all;
+  }
+}
+
+/* Custom scrollbar for a modern look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-800 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-700;
+}
